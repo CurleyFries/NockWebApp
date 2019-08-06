@@ -1,0 +1,9 @@
+Detailed Membership for <%= member.memberName %>
+<p>
+Division: <%= member.memberDivision%>
+<p>
+<a href="/viewMemberSubmissions?memberID=<%= member._id %>"> View Submitted Scoring Rounds</a>
+<p>
+<a href="removeMember?memberID=<%= member._id %>" onClick="return confirm('Are you sure you wish to remove this member from your team')"> Remove From Team</a>
+<p>
+<a href="/viewMembers"> Back</a>

@@ -1,0 +1,9 @@
+The following are all members attached to you:
+<p>
+<% for(var i = 0; i < members.length; i++) { %>
+<a href="/viewMemberDetail?memberID=<%= members[i]._id %>"><%= members[i].memberName %></a>
+<p>
+<%}%>
+<p>
+<a href="/home">Back to Home</a>
+</form>

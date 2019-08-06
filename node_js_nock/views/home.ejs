@@ -1,0 +1,18 @@
+<% if (additionalMessage) {%>
+<%= additionalMessage%>
+<% }
+else {
+if (newAcc) {%>
+Successfully created new account for: <%= teamName %>
+<% } 
+else {%>
+Welcome back, <%= teamName %>
+<% } }%>
+<p>
+<a href="viewProfile"> View Profile </a>
+<p>
+<a href="viewScoringRounds"> View Submitted Scoring Rounds </a>
+<p>
+<a href="/viewMembers">Current Team Members </a>
+<p>
+<a href="/logout">Logout</a>

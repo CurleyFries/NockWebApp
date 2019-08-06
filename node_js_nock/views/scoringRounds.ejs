@@ -1,0 +1,41 @@
+Scoring Rounds for <%= teamName %>
+
+<table style="width:100%" border="1">
+  <tr>
+    <th>Archer</th>
+    <th>Division</th> 
+    <th>Distance</th>
+    <th>Target Size</th>
+    <th>Total Score</th>
+    <th>Date Performed</th>
+    <th>Date Submitted</th>
+    <th>View Details</th>
+    <th>Delete Scoring Round </th>
+  </tr>
+  <% for(var i = 0; i < scoringRounds.length; i++) { %>
+  <tr>
+  <td> <%=scoringRounds[i].personName %> </td>
+  <td> <%=scoringRounds[i].division %> </td> 
+  <td> <%=scoringRounds[i].distance %> </td> 
+  <td> <%=scoringRounds[i].targetSize %> </td> 
+  <td> <%=scoringRounds[i].totalScore %> </td> 
+  <td> <%=scoringRounds[i].datePerformed %> </td>
+  <td> <%=scoringRounds[i].dateSubmitted %> </td>
+  <% if(cameFrom == "viewScoringRounds") {%>
+  <td> <a href="/viewScoringDetail?id=<%=scoringRounds[i]._id%>&cf=<%=cameFrom%>"> Details </a> </td> 
+<% } %>
+<% if(cameFrom == "viewMemberSubmissions") {%>
+  <td> <a href="/viewScoringDetail?id=<%=scoringRounds[i]._id%>&cf=<%=cameFrom%>&memberID=<%=memberID%>"> Details </a> </td>
+<% } %> 
+	<td> <a href="/deleteScoringRound?id=<%=scoringRounds[i]._id%>" onClick="return confirm('Are you sure you wish to delete this scoring round?')"> Delete </a> </td>
+  </tr>
+	<%}%>  
+</table>
+<p>
+<% if(cameFrom == "viewScoringRounds") {%>
+<a href="/home%>"> Back </a>
+<% } %>
+<% if(cameFrom == "viewMemberSubmissions") {%>
+<a href="/viewMemberDetail?memberID=<%= memberID%>"> Back </a>
+<% } %>
+<p>

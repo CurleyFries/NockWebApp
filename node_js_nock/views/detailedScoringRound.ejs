@@ -1,0 +1,31 @@
+Detailed Scoring Round for <%=scoringRound.personName%> on <%=scoringRound.datePerformed%>
+<p>
+Division: <%=scoringRound.division%> 
+<br>
+Distance: <%=scoringRound.distance%> 
+<br>
+Target Size: <%=scoringRound.targetSize%>
+<table style="width:100%" border="1">
+  <tr>
+    <th>End</th>
+    <th>Arrow Values</th> 
+    <th>End Score</th>
+    <th>Running Score</th>
+  </tr>
+  <% for(var i = 0; i < ends.length; i++) { %>
+  	<tr>
+  	  <td> <%= ends[i][0] %> </td>
+	  <td> <%= ends[i][1] %> </td> 
+	  <td> <%= ends[i][2] %> </td> 
+	  <td> <%= ends[i][3] %> </td> 
+	  </tr>
+	<% } %>  
+</table>
+<p>
+<% if(cameFrom == "viewScoringRounds") {%>
+<a href="/viewScoringRounds%>"> Back </a>
+<% } %>
+<% if(cameFrom == "viewMemberSubmissions") {%>
+<a href="/viewMemberSubmissions?memberID=<%=memberID%>"> Back </a>
+<% } %>
+<p>

@@ -1,0 +1,17 @@
+This is your current profile:
+<p>
+<img src="/image?filename=<%=teamProfile.teamLogo%>" style="width:500px;height:auto;">
+<form action = "/updateProfile" method = "post">
+<p>
+Team Name: <input name = "newTeamName" value = "<%-teamProfile.teamName%>" style="width: 300px;">
+<p>
+Team Description:
+<p>
+<textarea name = "newTeamDesc" rows="10" cols="30"><%=teamProfile.teamDesc%></textarea>
+<p>
+<input type = "submit" value = "Update Profile">
+</form>
+<p>
+<a href="/changePassword"> Change Password </a>
+<br>
+<a href="/home"> Back </a>
